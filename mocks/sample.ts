@@ -1,4 +1,4 @@
-import type { ExplainResponse, Lang, ReadItem } from "@/lib/types";
+import type { ExplainResponse, Facility, Lang, ReadItem } from "@/lib/types";
 
 export const MOCK_READ_ITEMS: ReadItem[] = [
   { id: "item-1", text: "Paracetamol 500mg", type: "medicine" },
@@ -69,3 +69,38 @@ export const MOCK_EXPLANATION: Record<Lang, ExplainResponse> = {
     disclaimer: DISCLAIMER.en,
   },
 };
+
+// DEMO DATA ONLY. Phone numbers are placeholders and coordinates are approximate.
+// Verify every entry with the facility before showing it to real users.
+export const MOCK_FACILITIES: Facility[] = [
+  {
+    id: "fac-1",
+    name: "Seti Provincial Hospital",
+    district: "Kailali",
+    phone: "+977-000-000001",
+    emergency_24h: true,
+    specialties: ["General medicine", "Emergency", "Pediatrics"],
+    lat: 28.69,
+    lng: 80.59,
+  },
+  {
+    id: "fac-2",
+    name: "Tikapur Hospital",
+    district: "Kailali",
+    phone: "+977-000-000002",
+    emergency_24h: false,
+    specialties: ["General medicine", "Maternity"],
+    lat: 28.52,
+    lng: 81.13,
+  },
+  {
+    id: "fac-3",
+    name: "Mahakali Provincial Hospital",
+    district: "Kanchanpur",
+    phone: "+977-000-000003",
+    emergency_24h: true,
+    specialties: ["General medicine", "Emergency", "Laboratory"],
+    lat: 28.97,
+    lng: 80.18,
+  },
+];

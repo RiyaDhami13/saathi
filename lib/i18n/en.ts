@@ -7,12 +7,22 @@ export const EN_TEXT = {
     searchPlaceholder: "Search medicine or test",
     uploadPhoto: "Upload Photo",
     trySample: "Try a Sample",
+    searchButton: "Search",
+    uploading: "Reading your photo…",
   },
   Confirm: {
     confirmHeading: "Is this correct?",
     confirmSubmit: "Yes, explain it",
     addItemPlaceholder: "Add a missing item",
     removeItem: "Remove",
+    addItemButton: "Add",
+    itemLabel: "Item",
+    types: {
+      medicine: "Medicine",
+      test: "Test",
+      instruction: "Instruction",
+      other: "Other",
+    },
   },
   Explain: {
     listen: "Listen",
@@ -21,6 +31,7 @@ export const EN_TEXT = {
       "For information only. Ask a health worker about diagnosis, doses, or changing treatment.",
     doctorNoteHeading: "Ask your health worker",
     careButton: "Find nearby care",
+    summaryHeading: "Summary",
   },
   Care: {
     callFirstReminder: "Call first before you go",
@@ -28,6 +39,10 @@ export const EN_TEXT = {
     districtFilterAll: "All districts",
     districtKanchanpur: "Kanchanpur",
     districtKailali: "Kailali",
+    emergencyBadge: "24/7 Emergency",
+    callButton: "Call",
+    directions: "Get directions",
+    noResults: "No facilities found",
   },
   States: {
     loading: "Loading…",
