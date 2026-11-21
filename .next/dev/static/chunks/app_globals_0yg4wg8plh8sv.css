@@ -1,0 +1,17 @@
+/* [project]/app/globals.css [app-client] (css) */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #222;
+  background-color: #f5f7fb;
+  font-family: Arial, sans-serif;
+}
+
+/*# sourceMappingURL=app_globals_0yg4wg8plh8sv.css.map*/
