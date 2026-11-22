@@ -1,0 +1,11 @@
+id,name,district,address,phone,latitude,longitude,emergency_24h,opening_hours,website
+1,Dirghayu Clinic & Medicare Center,Kanchanpur,"Street-2, Bhimdatta, Sudurpashchim Province 10400",9848720071,28.96545125,80.18152421,no,Daily 07:00-19:00,
+2,Mahakali Dental Hospital,Kanchanpur,"Street - 5, Mahendranagar, Kanchanpur",99520800,28.96670852,80.17984537,no,Sun-Fri 09:00-18:00; Sat 10:00-13:00,https://mahakalidentalhospital.com.np/
+3,Himal Dental Hospital (Mahendranagar branch),Kanchanpur," Bhimdatta, Sudurpashchim Province ",99520980,28.96502126,80.1843192,no,"Daily 08:00-18:00 (Saturday inferred, see to_verify)",
+4,Mahakali Optical & Care Center,Kanchanpur,"Hospital road, Bhimdatta, Sudurpashchim Province 10400",9863469864,28.96528225,80.18442205,no,09:00-17:00,
+5,Mantra Hospital & Research Center,Kanchanpur,"Near Traffic Chowk, Mahendranagar",99520548,28.97095621,80.18541071,yes,24 hours (emergency); OPD hours not given,https://mantrahospital.com.np/
+6,Mahakali Provincial Hospital (Mahakali Zonal Hospital),Kanchanpur,"18 Hospital Link, Bhimdatta, Sudurpashchim Province 10400",99521111,28.96402739,80.18478002,yes,24 hours (emergency); OPD hours not given,
+7,Sital Hospital,Kanchanpur,"Bhasi, Mahendranagar, Kanchanpur",99521978,28.96769243,80.19338652,yes,24 hours (emergency); OPD hours not given,
+8,seti provincial hospital ,kailali ,"dhangadhi1, Kailali ",91525911,28.704102,80.588012,yes,24 hours (emergency); OPD hours not given,https://sph.gov.np/
+9,maya metro ,kailali ,"chatakpur ,dhangadhi , kailali ",977-416140,28.711584,80.568478,yes,24 hours (emergency); OPD hours not given,https://www.mayametrohpl.com/
+10,nisarga hospital ,kailali ,"hasanpur ,dhangadhi , kailali ",9865680100,28.708289,80.586729,yes,24 hours (emergency); OPD hours not given,https://www.mayametrohpl.com/

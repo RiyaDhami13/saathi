@@ -99,7 +99,7 @@ export default function CarePage() {
         {/* Page heading */}
         <header className="mb-8">
           <h1 className="text-3xl font-bold text-gray-900">
-            Find Healthcare
+            Welcome to Saathi: Your Healthcare Companion
           </h1>
 
           <p className="mt-2 text-gray-600">
@@ -157,7 +157,7 @@ export default function CarePage() {
             disabled={loading}
             className="w-full rounded-lg bg-blue-600 px-4 py-3 font-semibold text-white hover:bg-blue-700 disabled:opacity-50"
           >
-            {loading ? "Searching..." : "Find Facilities"}
+            {loading ? "Searching..." : "Search Facilities"}
           </button>
         </form>
 
