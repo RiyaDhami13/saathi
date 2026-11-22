@@ -1,101 +1,186 @@
-import OpenAI from "openai";
 import {
-    MOCK_READ_ITEMS,
-    MOCK_EXPLANATION,
-} from  "./mock-data";
-
-import {
-    READ_ITEMS_PROMPTS,
-    EXPLANATION_PROMPT,
+  documentPrompt,
+  explanationPrompt,
 } from "./prompts";
 
+import type {
+  AIProvider,
+  Language,
+  ReadItem,
+} from "./types";
 
-// Create the OpenAI client only when an API key exists.
+const provider = (
+  process.env.AI_PROVIDER || "gemini"
+).toLowerCase() as AIProvider;
 
-const apiKey = process.env.OPENAI_API_KEY;
+async function callAI(prompt: string): Promise<string> {
+  if (provider === "gemini") {
+    return callGemini(prompt);
+  }
 
-const openai = apiKey
-  ? new OpenAI({apiKey})
-  :null;
- 
+  if (provider === "groq") {
+    return callGroq(prompt);
+  }
 
-  const MODEL = "gpt-4.1-mini"; // ai model
-  const TIMEOUT = 10_000;
-  const MAX_RETRIES = 1;
+  if (provider === "cohere") {
+    return callCohere(prompt);
+  }
 
+  throw new Error("Unsupported AI provider");
+}
 
-  //generic helper for Ai requests.
+// GEMINI
+async function callGemini(prompt: string) {
+  const key = process.env.GEMINI_API_KEY;
 
-  async function requestAI<T>(
-    prompt: string,
-    data: unknown,
-    fallback:T
-  ): Promise<T> {
-    if (!openai){
-        console.warn("OpenAI API key missing. Using mock data.")
-        return fallback;
+  if (!key) throw new Error("Gemini API key missing");
+
+  const response = await fetch(
+    `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${key}`,
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        contents: [{ parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.2,
+          responseMimeType: "application/json",
+        },
+      }),
+      cache: "no-store",
     }
-// Initial attempt plus one try
-for (let attempt = 0; attempt <=MAX_RETRIES;attempt++) {
-    const controller = new AbortController();
+  );
 
-    const timeoutID = setTimeout(()=>{controller.abort();},TIMEOUT);
+  if (!response.ok) {
+    throw new Error(`Gemini error: ${await response.text()}`);
+  }
 
-    try {
-        const response = await openai.responses.create(
-            {
-                model:MODEL,
-                instructions:prompt,
-                input: JSON.stringify(data),
+  const data = await response.json();
 
-            },
-            {
-                signal: controller.signal,
-            }
-        );
+  return data.candidates?.[0]?.content?.parts
+    ?.map((p: { text?: string }) => p.text || "")
+    .join("") || "";
+}
 
-        const result = response.output_text;
+// GROQ
+async function callGroq(prompt: string) {
+  const key = process.env.GROQ_API_KEY;
 
-        if (!result){
-            throw new Error("AI returned an empty response.");
-        }
+  if (!key) throw new Error("Groq API key missing");
 
-        return JSON.parse(result) as T;
-    } catch (error) {
-        console.error(
-            `AI request attempt ${attempt = 1} failed:`,
-            error
-        );
-
-        //retry once,then use fallback.
-
-        if (attempt===MAX_RETRIES) {
-            console.warn("AI unavailable.Using mock data.");
-            return fallback;
-        }
-    }finally {
-        clearTimeout(timeoutID);
+  const response = await fetch(
+    "https://api.groq.com/openai/v1/chat/completions",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key}`,
+      },
+      body: JSON.stringify({
+        model: "llama-3.3-70b-versatile",
+        messages: [
+          { role: "user", content: prompt },
+        ],
+        temperature: 0.2,
+        response_format: { type: "json_object" },
+      }),
+      cache: "no-store",
     }
-  }
-  return fallback;
+  );
+
+  if (!response.ok) {
+    throw new Error(`Groq error: ${await response.text()}`);
   }
 
-  // Generate reading items.
-  export async function generateReadItems(data: unknown){
-    return requestAI(
-        "READ_ITEMS_PROMPTS",
-        data,
-        MOCK_READ_ITEMS
-    );
+  const data = await response.json();
+
+  return data.choices?.[0]?.message?.content || "";
+}
+
+// COHERE
+async function callCohere(prompt: string) {
+  const key = process.env.COHERE_API_KEY;
+
+  if (!key) throw new Error("Cohere API key missing");
+
+  const response = await fetch(
+    "https://api.cohere.com/v2/chat",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${key}`,
+      },
+      body: JSON.stringify({
+        model: "command-a-03-2025",
+        messages: [
+          {
+            role: "user",
+            content: prompt,
+          },
+        ],
+        temperature: 0.2,
+      }),
+      cache: "no-store",
+    }
+  );
+
+  if (!response.ok) {
+    throw new Error(`Cohere error: ${await response.text()}`);
   }
 
-  // generate an explanaton.
+  const data = await response.json();
 
-  export async function generateExplanation(data: unknown) {
-    return requestAI(
-        EXPLANATION_PROMPT,
-        data,
-        MOCK_EXPLANATION
-    );
+  return data.message?.content
+    ?.filter((p: { type?: string }) => p.type === "text")
+    ?.map((p: { text?: string }) => p.text || "")
+    .join("") || "";
+}
+
+// PARSE AI JSON
+function parseResponse(response: string) {
+  const cleaned = response
+    .replace(/```json/gi, "")
+    .replace(/```/g, "")
+    .trim();
+
+  const start = cleaned.indexOf("{");
+  const end = cleaned.lastIndexOf("}");
+
+  if (start === -1 || end === -1) {
+    throw new Error("Invalid AI response");
   }
-  
+
+  return JSON.parse(cleaned.slice(start, end + 1));
+}
+
+// EXTRACT TEXT
+export async function extractDocumentText(text: string) {
+  const response = await callAI(documentPrompt(text));
+
+  const data = parseResponse(response);
+
+  if (!Array.isArray(data.items)) {
+    throw new Error("Invalid document response");
+  }
+
+  return data.items as ReadItem[];
+}
+
+// EXPLAIN DOCUMENT
+export async function explainDocument(
+  items: ReadItem[],
+  language: Language
+) {
+  const prompt = explanationPrompt(items, language);
+
+  const response = await callAI(prompt);
+
+  const data = parseResponse(response);
+
+  return {
+    summary: data.summary,
+    explanations: data.explanations,
+    safetyReminder: data.safetyReminder,
+  };
+}
