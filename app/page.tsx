@@ -9,7 +9,6 @@ import { UploadPicker } from "@/components/UploadPicker";
 import { useApp } from "@/components/AppProvider";
 import { fetchWithTimeout } from "@/lib/api";
 import { isReadItem, isRecord } from "@/lib/guards";
-import { parseQuery } from "@/lib/items";
 import { saveItems } from "@/lib/storage";
 import type { ReadItem } from "@/lib/types";
 import { MOCK_READ_ITEMS } from "@/mocks/sample";
@@ -78,13 +77,11 @@ export default function HomePage() {
         </BigButton>
       </section>
 
-      <section aria-label={t.Home.searchPlaceholder}>
-        <SearchBar
-          placeholder={t.Home.searchPlaceholder}
-          buttonLabel={t.Home.searchButton}
-          onSearch={(q) => goConfirm(parseQuery(q))}
-        />
-      </section>
-    </div>
-  );
-}
+<section className="flex flex-col gap-3" aria-label={t.Home.searchHeading}>
+  <h2 className="text-xl font-bold">{t.Home.searchHeading}</h2>
+  <SearchBar
+    placeholder={t.Home.searchPlaceholder}
+    buttonLabel={t.Home.searchButton}
+    onSearch={(q) => router.push(`/care?q=${encodeURIComponent(q)}`)}
+  />
+</section>
