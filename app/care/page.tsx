@@ -1,17 +1,22 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
+import { useRouter, useSearchParams } from "next/navigation";
 import { BigButton } from "@/components/BigButton";
 import { FacilityCard } from "@/components/FacilityCard";
 import { useApp } from "@/components/AppProvider";
 import { fetchWithTimeout } from "@/lib/api";
+import { matchesQuery } from "@/lib/facilitySearch";
 import { isFacility, isRecord } from "@/lib/guards";
 import type { Facility } from "@/lib/types";
 import { MOCK_FACILITIES } from "@/mocks/sample";
 
 type Filter = "all" | Facility["district"];
 
-export default function CarePage() {
+function CareContent() {
+  const router = useRouter();
+  const params = useSearchParams();
+  const query = (params.get("q") ?? "").trim();
   const { t } = useApp();
   const [facilities, setFacilities] = useState<Facility[] | null>(null);
   const [filter, setFilter] = useState<Filter>("all");
@@ -49,7 +54,9 @@ export default function CarePage() {
     { value: "Kailali", label: t.Care.districtKailali },
   ];
 
-  const visible = (facilities ?? []).filter((f) => filter === "all" || f.district === filter);
+  const visible = (facilities ?? []).filter(
+    (f) => (filter === "all" || f.district === filter) && matchesQuery(f, query),
+  );
 
   return (
     <div className="flex flex-col gap-6">
@@ -61,6 +68,15 @@ export default function CarePage() {
       >
         {t.Care.callFirstReminder}
       </div>
+
+      {query && (
+        <div className="flex flex-col gap-3 rounded-2xl border-2 border-neutral-950 p-4">
+          <p className="text-lg font-bold">{query}</p>
+          <BigButton tone="secondary" onClick={() => router.push("/care")}>
+            {t.Care.districtFilterAll}
+          </BigButton>
+        </div>
+      )}
 
       <div role="group" aria-label={t.Care.districtFilterAll} className="flex flex-wrap gap-2">
         {filters.map((f) => (
@@ -76,15 +92,25 @@ export default function CarePage() {
         ))}
       </div>
 
-      {!facilities ? (
-        <p className="text-lg font-medium" role="status">
-          {t.States.loading}
-        </p>
-      ) : visible.length === 0 ? (
-        <p className="text-lg font-medium">{t.Care.noResults}</p>
-      ) : (
-        visible.map((f) => <FacilityCard key={f.id} facility={f} />)
-      )}
+      <div aria-live="polite" aria-busy={!facilities}>
+        {!facilities ? (
+          <p className="text-lg font-medium" role="status">
+            {t.States.loading}
+          </p>
+        ) : visible.length === 0 ? (
+          <p className="text-lg font-medium">{t.Care.noResults}</p>
+        ) : (
+          visible.map((f) => <FacilityCard key={f.id} facility={f} />)
+        )}
+      </div>
     </div>
+  );
+}
+
+export default function CarePage() {
+  return (
+    <Suspense fallback={null}>
+      <CareContent />
+    </Suspense>
   );
 }

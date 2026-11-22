@@ -77,11 +77,14 @@ export default function HomePage() {
         </BigButton>
       </section>
 
-<section className="flex flex-col gap-3" aria-label={t.Home.searchHeading}>
-  <h2 className="text-xl font-bold">{t.Home.searchHeading}</h2>
-  <SearchBar
-    placeholder={t.Home.searchPlaceholder}
-    buttonLabel={t.Home.searchButton}
-    onSearch={(q) => router.push(`/care?q=${encodeURIComponent(q)}`)}
-  />
-</section>
+      <section className="flex flex-col gap-3" aria-label={t.Home.searchHeading}>
+        <h2 className="text-xl font-bold">{t.Home.searchHeading}</h2>
+        <SearchBar
+          placeholder={t.Home.searchPlaceholder}
+          buttonLabel={t.Home.searchButton}
+          onSearch={(q) => router.push(`/care?q=${encodeURIComponent(q)}`)}
+        />
+      </section>
+    </div>
+  );
+}
