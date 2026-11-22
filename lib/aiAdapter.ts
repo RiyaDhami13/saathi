@@ -42,7 +42,7 @@ export async function readDocumentAsItems(file: File): Promise<ReadItem[]> {
     .split(/\r?\n/)
     .map(cleanLine)
     .filter((l) => l.length > 3 && !l.endsWith(":") && !SKIP_LINE.test(l) && !NOISE_LINE.test(l))
-    .slice(0, 12);
+    .slice(0, 20);
   if (lines.length === 0) throw new Error("No readable lines");
   return lines.map((text, i) => ({ id: String(i + 1), text, type: guessType(text) }));
 }
