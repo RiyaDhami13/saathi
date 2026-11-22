@@ -29,7 +29,7 @@ export default function ExplainPage() {
         const res = await fetchWithTimeout(
           "/api/explain",
           {
-            method: "",
+            method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ items: stored, lang }),
           },
