@@ -26,7 +26,7 @@ function CareContent() {
     (async () => {
       let result: Facility[] = MOCK_FACILITIES;
       try {
-        const res = await fetchWithTimeout("/api/care");
+        const res = await fetchWithTimeout("/api/facility-list");
         if (res.ok) {
           const json: unknown = await res.json();
           if (
