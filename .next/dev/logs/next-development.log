@@ -1,2 +1,7 @@
-{"timestamp":"00:00:01.651","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:12.440","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:00.783","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:03.965","source":"Browser","level":"INFO","message":"Download the React DevTools for a better development experience: https://react.dev/link/react-devtools"}
+{"timestamp":"00:00:24.323","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:24.324","source":"Server","level":"LOG","message":"Could not open layout.tsx in the editor."}
+{"timestamp":"00:00:24.324","source":"Server","level":"LOG","message":""}
+{"timestamp":"00:00:24.324","source":"Server","level":"LOG","message":"When running on Windows, file names are checked against an access list to protect against remote code execution attacks. File names may consist only of alphanumeric characters (all languages), periods, dashes, slashes, and underscores."}
+{"timestamp":"00:00:24.325","source":"Server","level":"LOG","message":""}
