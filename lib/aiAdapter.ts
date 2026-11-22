@@ -22,12 +22,24 @@ function guessType(line: string): ReadItem["type"] {
   return "other";
 }
 
+const SKIP_LINE =
+  /^(here is|here are|below is|sure|okay|the following|note:)|^(patient|name|sex|age|doctor|dr\.?|reg|pan|project|sample|header|address|phone|date|time|collected|ref)\b|transcription|document information|patient information/i;
+
+function cleanLine(raw: string): string {
+  return raw
+    .replace(/[*#_`>]+/g, "")
+    .replace(/^\s*(?:[•-]+|\d+[.)])\s*/, "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 200);
+}
+
 export async function readDocumentAsItems(file: File): Promise<ReadItem[]> {
   const [doc] = await readDocument(file);
   const lines = (doc?.value ?? "")
     .split(/\r?\n/)
-    .map((l) => l.replace(/^\s*(?:[*•-]+|\d+[.)])\s*/, "").trim().slice(0, 200))
-    .filter((l) => l.length > 1)
+    .map(cleanLine)
+    .filter((l) => l.length > 3 && !l.endsWith(":") && !SKIP_LINE.test(l))
     .slice(0, 12);
   if (lines.length === 0) throw new Error("No readable lines");
   return lines.map((text, i) => ({ id: String(i + 1), text, type: guessType(text) }));
