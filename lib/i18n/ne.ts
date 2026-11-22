@@ -6,7 +6,12 @@ export const NE_TEXT: I18nDict = {
   Home: {
     scanButton: "प्रेस्क्रिप्सन स्क्यान गर्नुहोस्",
     emergencyButton: "आपतकालीन",
-    searchPlaceholder: "औषधि वा जाँच खोज्नुहोस्",
+
+    searchHeading: "डाक्टर वा सेवा खोज्नुहोस्",
+    searchPlaceholder: "डाक्टर वा सेवा खोज्नुहोस्, जस्तै हृदय रोग विशेषज्ञ, एक्स-रे",
+
+    resultsFor: "नतिजा",
+    showAll: "सबै देखाउनुहोस्",
     uploadPhoto: "फोटो अपलोड गर्नुहोस्",
     trySample: "नमूना प्रयास गर्नुहोस्",
     searchButton: "खोज्नुहोस्",

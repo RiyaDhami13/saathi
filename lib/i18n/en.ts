@@ -4,7 +4,13 @@ export const EN_TEXT = {
   Home: {
     scanButton: "Scan Prescription",
     emergencyButton: "Emergency",
-    searchPlaceholder: "Search medicine or test",
+
+    searchPlaceholder: "Doctor or service, e.g. heart doctor, X-ray",
+    searchHeading: "Find a doctor or service",
+    
+    resultsFor: "Results for",
+    showAll: "Show all",
+
     uploadPhoto: "Upload Photo",
     trySample: "Try a Sample",
     searchButton: "Search",
