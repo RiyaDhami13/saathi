@@ -9,6 +9,7 @@ import { fetchWithTimeout } from "@/lib/api";
 import { isExplainResponse } from "@/lib/guards";
 import { loadItems } from "@/lib/storage";
 import type { ExplainResponse, ReadItem } from "@/lib/types";
+import { MOCK_EXPLANATION } from "@/mocks/sample";
 
 export default function ExplainPage() {
   const router = useRouter();
@@ -23,7 +24,7 @@ export default function ExplainPage() {
     setData(null);
 
     (async () => {
-      let result: ExplainResponse = { summary: "", items: [] };
+      let result: ExplainResponse = MOCK_EXPLANATION[lang];
       try {
         const res = await fetchWithTimeout(
           "/api/explain",
