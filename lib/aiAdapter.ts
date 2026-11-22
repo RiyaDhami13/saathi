@@ -17,10 +17,12 @@ const DOCTOR_NOTE: Record<Lang, string> = {
 
 function guessType(line: string): ReadItem["type"] {
   if (/\b(tab|tabs|tablet|cap|capsule|syrup|syp|inj|injection|cream|ointment|drops?|mg|ml)\b/i.test(line)) return "medicine";
-  if (/\b(test|blood|urine|x-?ray|scan|ecg|ultrasound|usg|cbc|sugar|hb)\b/i.test(line)) return "test";
+  if (/\b(test|blood|urine|x-?ray|scan|ecg|ultrasound|usg|cbc|sugar|hb|hemoglobin|haemoglobin|leucocyte|neutrophil|lymphocyte|eosinophil|monocyte|basophil|platelets?|rbc|wbc|hct|mcv|mch|mchc|count|sgpt|sgot|alp|creatinine|urea|glucose)\b/i.test(line)) return "test";
   if (/\b(daily|twice|once|before|after|food|days?|rest|avoid|drink|water)\b/i.test(line)) return "instruction";
   return "other";
 }
+
+const NOISE_LINE = /^[\d.,\s\-–\/%]*$|^[HL]\s*[\d.]+$|^(g\/dl|\/?cumm|mg\/dl|%|fl|pg)$/i;
 
 const SKIP_LINE =
   /^(here is|here are|below is|sure|okay|the following|note:)|^(patient|name|sex|age|doctor|dr\.?|reg|pan|project|sample|header|address|phone|date|time|collected|ref)\b|transcription|document information|patient information/i;
@@ -39,7 +41,7 @@ export async function readDocumentAsItems(file: File): Promise<ReadItem[]> {
   const lines = (doc?.value ?? "")
     .split(/\r?\n/)
     .map(cleanLine)
-    .filter((l) => l.length > 3 && !l.endsWith(":") && !SKIP_LINE.test(l))
+    .filter((l) => l.length > 3 && !l.endsWith(":") && !SKIP_LINE.test(l) && !NOISE_LINE.test(l))
     .slice(0, 12);
   if (lines.length === 0) throw new Error("No readable lines");
   return lines.map((text, i) => ({ id: String(i + 1), text, type: guessType(text) }));
@@ -52,7 +54,7 @@ export async function explainAsContract(items: ReadItem[], lang: Lang): Promise<
     confidence: 1,
     status: "success",
   }));
-  const r = await explainItems(kItems);
+  const r = await explainItems(kItems, lang);
   return {
     summary: r.summary,
     items: items.map((it, i) => ({

@@ -29,7 +29,7 @@ export function ListenButton({ text }: { text: string }) {
     }
     const utterance = new SpeechSynthesisUtterance(text);
     // Many devices have no Nepali voice. Hindi (Devanagari) is the closest fallback.
-    const wanted = lang === "ne" ? ["ne-NP", "hi-IN"] : ["en-US"];
+    const wanted = /[\u0900-\u097F]/.test(text) ? ["ne-NP", "hi-IN"] : ["en-US"];
     const voices = synth.getVoices();
     const voice = wanted
       .map((code) => voices.find((v) => v.lang.replace("_", "-").toLowerCase() === code.toLowerCase()))
