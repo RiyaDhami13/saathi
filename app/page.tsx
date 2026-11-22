@@ -29,7 +29,7 @@ export default function HomePage() {
     try {
       const body = new FormData();
       body.append("file", file);
-      const res = await fetchWithTimeout("/api/read-document", { method: "POST", body }, 15000);
+      const res = await fetchWithTimeout("/api/read-document", { method: "POST", body }, 30000);
       if (res.ok) {
         const data: unknown = await res.json();
         if (
