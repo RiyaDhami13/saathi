@@ -1,19 +1,7 @@
-
-# Environment variables
+/node_modules
+/.next
 .env
-.env.local
-.env.*
-
-# Dependencies
-node_modules/
-
-# Next.js
-.next/
-out/
-
-# Build files
-build/
-dist/
-
-# Debug logs
-npm-debug.log*
+.env*.local
+/vercel
+/build
+/out
