@@ -1,7 +1,12 @@
-export default function HomePage() {
+"use client";
+
+import { useApp } from "@/components/AppProvider";
+
+export default function Loading() {
+  const { t } = useApp();
   return (
-    <main className="p-6">
-     test
-    </main>
+    <p className="text-lg font-medium" role="status">
+      {t.States.loading}
+    </p>
   );
 }
