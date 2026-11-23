@@ -1,16 +1,16 @@
-# 🏥 Sudur Saathi
+#  Sudur Saathi
 ### Your Digital Companion for Accessible Healthcare
 
 **Sudur Saathi** is an AI-powered healthcare accessibility platform designed to help people and families in Sudurpashchim Province, Nepal, access healthcare information more easily.
 
 Finding the right healthcare facility and understanding medical prescriptions can be challenging, especially when reliable information is difficult to access. Sudur Saathi aims to bridge this gap through AI-assisted prescription understanding, healthcare facility discovery, and a simple, accessible web experience.
 
-🌐 **Live Demo:** https://sudur-saathi.vercel.app/  
-💻 **GitHub Repository:** https://github.com/RiyaDhami13/saathi
+ **Live Demo:** https://sudur-saathi.vercel.app/  
+ **GitHub Repository:** https://github.com/RiyaDhami13/saathi
 
 ---
 
-## 🎯 The Problem
+##  The Problem
 
 Many people in Sudurpashchim face difficulties when accessing and understanding healthcare information.
 
@@ -23,7 +23,7 @@ Some common challenges include:
 
 These challenges can delay access to appropriate healthcare services.
 
-## 💡 Our Solution
+##  Our Solution
 
 Sudur Saathi brings essential healthcare information into one accessible digital platform.
 
@@ -31,34 +31,34 @@ It combines AI-assisted document reading, understandable medical explanations, a
 
 Our goal is to make healthcare information easier to find, understand, and access.
 
-## ✨ Key Features
+##  Key Features
 
-### 🚑 1. Emergency Access
+###  1. Emergency Access
 - Quick access to emergency healthcare information.
 - Easy navigation to emergency-related services.
 
-### 🤖 2. AI-Powered Prescription Understanding
+###  2. AI-Powered Prescription Understanding
 - Upload prescription images or supported text documents.
 - Extract important medical information using AI.
 - Identify medicines, medical tests, and instructions.
 - Generate easy-to-understand explanations.
 
-### 🌐 3. Multilingual Support
+###  3. Multilingual Support
 - English and Nepali language support.
 - Designed to make healthcare information more understandable for local communities.
 
-### 🏥 4. Healthcare Facility Discovery
+###  4. Healthcare Facility Discovery
 - Explore healthcare facilities.
 - Search and filter facilities by district.
 - Access available facility information and contact details.
 - Explore medical specialties and services.
 
-### 📱 5. Accessible User Interface
+###  5. Accessible User Interface
 - Simple and user-friendly design.
 - Clear navigation and readable interface.
 - Designed with accessibility and ease of use in mind.
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Technology | Purpose |
 |---|---|
@@ -73,7 +73,7 @@ Our goal is to make healthcare information easier to find, understand, and acces
 | Vercel | Application deployment |
 | Git & GitHub | Version control and collaboration |
 
-## ⚙️ How It Works
+##  How It Works
 
 ### Prescription Understanding Workflow
 
@@ -91,7 +91,7 @@ Our goal is to make healthcare information easier to find, understand, and acces
 3. The application retrieves relevant facility information.
 4. The user explores available contact information and medical services.
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```text
 saathi/
@@ -121,7 +121,7 @@ saathi/
 └── README.md
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 Follow these steps to run Sudur Saathi locally.
 
@@ -158,8 +158,8 @@ Create a `.env.local` file in the root directory.
 Add the required environment variables:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=your_supabase_publishable_key
+NEXT_PUBLIC_SUPABASE_URL=https://vpibxsgztbiydyfvaqzf.supabase.co
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_Y5xRwOEqbHHsM26-19UHOg_EsFcfskj
 
 AI_PROVIDER=gemini
 
@@ -186,7 +186,7 @@ Visit:
 http://localhost:3000
 ```
 
-## 🩺 Healthcare Safety
+##  Healthcare Safety
 
 Healthcare information must be handled responsibly.
 
@@ -197,29 +197,32 @@ Sudur Saathi is designed as an informational support platform, not a replacement
 - Users should confirm medical instructions with qualified healthcare professionals.
 - AI-generated information should not be used independently to change medication or treatment.
 
-## 🌱 Our Vision
+##  Our Vision
 
 We envision a future where everyone can access understandable healthcare information regardless of their location or technical knowledge.
 
 Through technology and AI, Sudur Saathi aims to contribute to a more accessible and informed healthcare experience for communities in Sudurpashchim and beyond.
 
-## 🏆 Hackathon
+##  Hackathon
 
 **Developed for INNEX 2026**
 
-Project Category: AI / Technology for Social Impact
+Project Category: Health
 
 Project Domain: Healthcare Accessibility
 
-Built with teamwork, creativity, and a vision to make healthcare information more accessible.
+Built with teamwork, creativity and a vision to make healthcare information more accessible.
 
-## 👥 Team
+##  Team
 
-**Team Sudur Saathi**
+**Freshers**
 
 Developed collaboratively by a team of student innovators for INNEX 2026.
 
----
+-Riya Dhami
+-Sugam Joshi
+-Jyoti Bhatt
+-Kapil Bohara
 
 ## 📄 License
 
@@ -227,4 +230,4 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 ---
 
-**Sudur Saathi – Making Healthcare Information Accessible to Everyone. ❤️**
+**Sudur Saathi – Making Healthcare Information Accessible to Everyone. **
