@@ -1,0 +1,69 @@
+facility_id,specialty,condition,days_available
+1,General Medicine,minor /Major ,Monday- Sunday 
+1,General Surgery,Minor procedures,not pubically listed 
+1,Rheumatology,major,1st & 3rd Saturday monthly
+1,Dermatology,major,2nd Saturday & Sunday monthly
+1,Cardiology,ECG,Last Saturday monthly
+1,OPD,all service ,monday -Sunday
+1,Pharmacy,service ,daily 
+2,Dental,Implant,daily 
+2,Dental,Surgery,on request 
+2,Dental,"Scaling, filling, RCT, extraction, dentures, braces",Sun-Fri; Sat 10:00-13:00
+3,Dental,"Scaling, filling, RCT, extraction, crowns, dentures",Daily
+4,Eye care,Eye checkup,Sun-Fri
+4,Eye care,Spectacles (Chasma Banaune),anytime 
+4,Eye care,Contact lenses,Every day (except public holidays)
+4,Eye care,Dry eye checkup,anytime 
+5,Dental,general checkup ,opening time 
+5,Physiotherapy,minor therapy ,everyday (except holidays)
+5,NICU,Implant,everyday (except holidays)
+5,Endoscopy,upper endoscopy ,Saturday 
+5,ECHO/ECG,normal or arrythmia ,regularly
+5,X-ray,all service ,regularly
+5,ICU/HDU,all service ,regularly
+5,Pharmacy,all service ,anytime 
+5,Emergency,emergency ,anytime 
+5,Laparoscopy,general and gastrointestinal,on request 
+5,Radiology,general ,regularly
+5,Orthopaedics,general orthopaedics ,daily
+5,Surgery,all service ,on request 
+5,Paediatrics,,wed - Sunday 
+5,Dermatology,,daily 
+5,Anesthesia,,not mentioned 
+5,ENT,,wed- Sunday 
+5,Gynaecology & Obstetrics,,everyday (except holidays )
+5,Internal Medicine,,
+6,OPD,General OPD,Every day (except public holidays)
+6,Dental,Dental OPD,Every day (except public holidays)
+6,Orthopaedics,Orthopedics OPD,Tuesday & Thursday
+6,Gynaecology & Obstetrics,Gynecology & Obstetrics OPD,"Monday, Wednesday & Friday"
+6,ENT,ENT OPD (ENT Endoscopy),"Monday, Wednesday & Friday"
+6,General Surgery,General Surgery OPD,Monday & Thursday
+6,X-ray,Video X-Ray OPD,Every day (except public holidays)
+6,ECHO/ECG,Video X-Ray / ECHO OPD,
+6,Paediatrics,Pediatrics OPD,Every day (except public holidays)
+6,Immunization,Regular Immunization,Tuesday & Thursday
+6,Antenatal care,Antenatal (pregnancy) checkup,Monday & Friday
+6,Family planning,Family planning device insertion,Wednesday
+6,ECHO/ECG,Dressing / ECG,everyday (except holidays)
+6,ENT,ENT Endoscopy,everyday (except holidays)
+6,General Medicine,Medicine OPD,
+6,Health insurance claim,,
+6,Social service,,
+6,Laboratory,,
+6,X-ray,X-Ray Room,
+6,ART (HIV),ART Room,
+6,DOTS (TB),DOTS Room,
+6,MDR-TB,MDR Room,
+6,Physiotherapy,,
+6,Emergency,,24 hours
+6,Ambulance,,24 hours
+7,Psychiatry,"Mental health, drug addiction",
+8,general OPD,general ,Monday-Friday 
+8,Emergency,emergency ,anytime 
+8,"Diagnostics, Surgery & Support Units",depends ,dates available for cases
+8,Public Health Programs,if needed ,ocassionally 
+9,emergency ,emergency ,everytime 
+9,Neurosurgery,general ,
+9,Cardiology & Cardiothoracic Care,vital ,
+9,Obstetrics & Gynecology,general ,
