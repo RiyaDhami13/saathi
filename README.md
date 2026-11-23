@@ -217,7 +217,7 @@ Built with teamwork, creativity and a vision to make healthcare information more
 
 **Freshers**
 
-## 👥 Team Members & Contributions
+##  Team Members & Contributions
 
 Sudur Saathi was developed by a team of four members for **INNEX 2026**. Each member contributed to a different part of the project.
 
@@ -229,7 +229,7 @@ Sudur Saathi was developed by a team of four members for **INNEX 2026**. Each me
 | **Jyoti Bhatt** | Testing, Safety & Presentation | Contributed to application testing, checking functionality, reviewing safety considerations, and preparing the project presentation. |
 
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
