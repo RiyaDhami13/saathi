@@ -158,8 +158,8 @@ Create a `.env.local` file in the root directory.
 Add the required environment variables:
 
 ```env
-NEXT_PUBLIC_SUPABASE_URL=https://vpibxsgztbiydyfvaqzf.supabase.co
-NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_Y5xRwOEqbHHsM26-19UHOg_EsFcfskj
+NEXT_PUBLIC_SUPABASE_URL=Our_supabase_project_url
+NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=Our__supabase_publishable_key
 
 AI_PROVIDER=gemini
 
@@ -217,12 +217,17 @@ Built with teamwork, creativity and a vision to make healthcare information more
 
 **Freshers**
 
-Developed collaboratively by a team of student innovators for INNEX 2026.
+## 👥 Team Members & Contributions
 
--Riya Dhami
--Sugam Joshi
--Jyoti Bhatt
--Kapil Bohara
+Sudur Saathi was developed by a team of four members for **INNEX 2026**. Each member contributed to a different part of the project.
+
+| Team Member | Role | Key Contributions |
+|---|---|---|
+| **Sugam Joshi** | Database Management | Designed and managed the healthcare database using Supabase and PostgreSQL; organized healthcare facility and doctor records; worked on database security and integration with the application. |
+| **Riya Dhami** | Frontend Development | Worked on the user interface, responsive web design, accessibility, and user experience. |
+| **Kapil Bohara** | AI Integration | Worked on AI-powered prescription/document reading, medical information explanations, and multilingual AI functionality. |
+| **Jyoti Bhatt** | Testing, Safety & Presentation | Contributed to application testing, checking functionality, reviewing safety considerations, and preparing the project presentation. |
+
 
 ## 📄 License
 
