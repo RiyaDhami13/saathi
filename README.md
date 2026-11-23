@@ -163,9 +163,9 @@ NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=sb_publishable_Y5xRwOEqbHHsM26-19UHOg_EsFcf
 
 AI_PROVIDER=gemini
 
-GEMINI_API_KEY=your_gemini_api_key
-GROQ_API_KEY=your_groq_api_key
-COHERE_API_KEY=your_cohere_api_key
+GEMINI_API_KEY=Our_gemini_api_key
+GROQ_API_KEY=Our_groq_api_key
+COHERE_API_KEY=Our_cohere_api_key
 ```
 
 Configure the API keys for the services you intend to use.
