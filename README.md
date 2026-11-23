@@ -161,7 +161,7 @@ Add the required environment variables:
 NEXT_PUBLIC_SUPABASE_URL=Our_supabase_project_url
 NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=Our__supabase_publishable_key
 
-AI_PROVIDER=gemini
+AI_PROVIDER=groq
 
 GEMINI_API_KEY=Our_gemini_api_key
 GROQ_API_KEY=Our_groq_api_key
