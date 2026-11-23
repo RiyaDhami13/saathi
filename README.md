@@ -197,6 +197,82 @@ Sudur Saathi is designed as an informational support platform, not a replacement
 - Users should confirm medical instructions with qualified healthcare professionals.
 - AI-generated information should not be used independently to change medication or treatment.
 
+## &#x20;Project Progress: Planned vs. Achieved
+
+During INNEX 2026, our team aimed to build Sudur Saathi as an accessible healthcare platform for people in Sudurpashchim Province, Nepal.
+
+We worked toward our planned features within the limited hackathon development period.
+
+### What We Planned and Achieved
+
+| Planned Feature               | Achievement                                                                                   |
+| ----------------------------- | --------------------------------------------------------------------------------------------- |
+| Healthcare web platform       | Developed the main web application and user interface.                                        |
+| Healthcare facility discovery | Implemented healthcare facility search and listing functionality.                             |
+| Database integration          | Set up Supabase with PostgreSQL to store and manage healthcare information.                   |
+| AI-powered document reading   | Implemented an AI-based prescription/document reading workflow.                               |
+| AI medical explanations       | Developed an AI-powered feature to explain extracted medical information in simpler language. |
+| Multilingual accessibility    | Started building English and Nepali language support.                                         |
+| Emergency access              | Added an emergency access option to the application.                                          |
+
+### Planned Features We Could Not Fully Complete
+
+Due to the limited 48-hour hackathon development period, technical challenges, and time constraints, some planned features could not be completed to the level we originally intended.
+
+| Incomplete Feature                            | Reason / Current Status                                                                     |
+| --------------------------------------------- | ------------------------------------------------------------------------------------------- |
+|                                               |                                                                                             |
+| Fully functional multilingual experience      | Language support requires further implementation and testing across the entire application. |
+| Comprehensive facility and doctor information | More complete and verified healthcare records are needed.                                   |
+|                                               |                                                                                             |
+|                                               |                                                                                             |
+
+
+
+## Future Development Roadmap
+
+Sudur Saathi is not intended to stop at the hackathon prototype. We want to continue improving it into a practical healthcare accessibility platform.
+
+### Features We Plan to Add
+
+**1. Improved Multilingual Support**
+
+- Complete English and Nepali language support.
+- Explore voice-based interaction.
+- Make healthcare information easier to understand for local communities.
+
+**2. Advanced Healthcare Directory**
+
+- Add more verified hospitals, clinics, pharmacies, and healthcare professionals.
+- Include doctor availability, specialties, contact details, and service information.
+- Improve location-based facility discovery.
+
+**3. AI-Powered Healthcare Assistance**
+
+- Improve prescription and medical document reading.
+- Provide clearer explanations of medical terms.
+- Add support for more document formats and regional languages.
+- Include stronger medical safety checks and reminders.
+
+**4. Emergency Assistance Improvements**
+
+- Provide easier access to emergency contact information.
+- Add location-aware emergency facility discovery.
+- Explore directions to nearby healthcare facilities.
+
+**5. User Accounts and Personalization**
+
+- Allow users to save useful healthcare facilities.
+- Maintain personal preferences and language settings.
+- Explore secure storage of health-related documents with user consent.
+
+**6. Reliability and Accessibility**
+
+- Improve mobile responsiveness.
+- Optimize performance for slower internet connections.
+- Conduct usability testing with people from different communities.
+- Strengthen data protection and application security.
+
 ##  Our Vision
 
 We envision a future where everyone can access understandable healthcare information regardless of their location or technical knowledge.
