@@ -19,6 +19,7 @@ export const NE_TEXT: I18nDict = {
   },
   Confirm: {
     confirmHeading: "के यो सही छ?",
+    checkNumbers: "हरेक नम्बर आफ्नो कागजसँग मिलाउनुहोस्। गलत भए सच्याउनुहोस्।",
     confirmSubmit: "हो, बुझाइदिनुहोस्",
     addItemPlaceholder: "छुटेको कुरा थप्नुहोस्",
     removeItem: "हटाउनुहोस्",

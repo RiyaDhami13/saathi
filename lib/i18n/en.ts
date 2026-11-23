@@ -18,6 +18,7 @@ export const EN_TEXT = {
   },
   Confirm: {
     confirmHeading: "Is this correct?",
+    checkNumbers: "Check each number against your paper. Fix anything that is wrong.",
     confirmSubmit: "Yes, explain it",
     addItemPlaceholder: "Add a missing item",
     removeItem: "Remove",

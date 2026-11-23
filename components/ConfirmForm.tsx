@@ -50,6 +50,9 @@ export function ConfirmForm() {
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-2xl font-bold">{t.Confirm.confirmHeading}</h1>
+      <p className="rounded-xl border-2 border-neutral-950 bg-amber-50 p-4 text-lg font-bold">
+        {t.Confirm.checkNumbers}
+      </p>
 
       <ul className="flex flex-col gap-4">
         {items.map((item, index) => (
